@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kruft</title>
-    <link>http://localhost:1313/</link>
+    <link>https://darwinmorris.github.io/</link>
     <description>Recent content on Kruft</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 07 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://darwinmorris.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://darwinmorris.github.io/about/</link>
       <pubDate>Wed, 07 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://darwinmorris.github.io/about/</guid>
       <description></description>
     </item>
     <item>
       <title>First</title>
-      <link>http://localhost:1313/posts/first/</link>
+      <link>https://darwinmorris.github.io/posts/first/</link>
       <pubDate>Wed, 01 Apr 2020 02:01:58 +0530</pubDate>
-      <guid>http://localhost:1313/posts/first/</guid>
+      <guid>https://darwinmorris.github.io/posts/first/</guid>
       <description>&lt;p&gt;Your post content goes here…&lt;/p&gt;</description>
     </item>
   </channel>
