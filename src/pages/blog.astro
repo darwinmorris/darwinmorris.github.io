@@ -1,0 +1,21 @@
+---
+import Header from '../components/Header.astro';
+import BlogPost from "../components/BlogPost.astro";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog");
+
+allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Header />
+
+<main>
+  <h1>Blog</h1>
+
+  <ul>
+    {allPosts.map((post) => (
+      <BlogPost post={post} />
+    ))}
+  </ul>
+</main>

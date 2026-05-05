@@ -1,0 +1,112 @@
+---
+import Header from "../components/Header.astro";
+
+const { frontmatter } = Astro.props;
+
+const date = frontmatter.pubDate?.toLocaleDateString("en", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Header />
+
+<main class="post">
+  <article>
+    <a class="back" href="/blog">Take me back</a>
+
+    <header class="post-header">
+      <h1>{frontmatter.title}</h1>
+
+      {frontmatter.description && (
+        <p class="description">{frontmatter.description}</p>
+      )}
+
+      {date && <time>{date}</time>}
+
+      {frontmatter.tags?.length > 0 && (
+        <div class="tags">
+          {frontmatter.tags.map((tag) => (
+            <span>{tag}</span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <section class="content">
+      <slot />
+    </section>
+  </article>
+</main>
+
+<style>
+  .post {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+
+  .back {
+    display: inline-block;
+    margin-bottom: 32px;
+    color: #6b7280;
+    text-decoration: none;
+  }
+
+  .back:hover {
+    color: #111827;
+  }
+
+  .post-header {
+    margin-bottom: 48px;
+  }
+
+  h1 {
+
+    font-size: 32px;
+
+  }
+
+  .description {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0 0 16px;
+  }
+
+  time {
+    color: #6b7280;
+    font-size: 14px;
+  }
+
+  .tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .tags span {
+    font-size: 13px;
+    color: #374151;
+    background: #f3f4f6;
+    padding: 4px 8px;
+    border-radius: 999px;
+  }
+
+  .content {
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  .content :global(pre) {
+    padding: 16px;
+    border-radius: 12px;
+    overflow-x: auto;
+  }
+
+  .content :global(code) {
+    font-size: 0.95em;
+  }
+</style>
