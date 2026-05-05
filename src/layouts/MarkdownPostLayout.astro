@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import Layout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
 
@@ -10,10 +10,8 @@ const date = frontmatter.pubDate?.toLocaleDateString("en", {
 });
 ---
 
-<Header />
-
-<main class="post">
-  <article>
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <article class="post">
     <a class="back" href="/blog">Take me back</a>
 
     <header class="post-header">
@@ -38,13 +36,12 @@ const date = frontmatter.pubDate?.toLocaleDateString("en", {
       <slot />
     </section>
   </article>
-</main>
+</Layout>
 
 <style>
   .post {
     max-width: 760px;
     margin: 0 auto;
-    padding: 64px 24px;
   }
 
   .back {
