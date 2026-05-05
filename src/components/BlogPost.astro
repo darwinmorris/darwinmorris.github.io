@@ -1,0 +1,62 @@
+---
+const { post } = Astro.props;
+
+const href = `/posts/${post.id}`;
+const date = post.data.pubDate?.toLocaleDateString("en", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
+---
+
+
+<article class="blog-post">
+  <a href={href}>
+    <h2>{post.data.title}</h2>
+  </a>
+
+  <p>{post.data.description}</p>
+
+  <div class="meta">
+    <time datetime={post.data.pubDate?.toISOString()}>{date}</time>
+
+    {post.data.tags?.length > 0 && (
+      <span>{post.data.tags.join(", ")}</span>
+    )}
+  </div>
+</article>
+
+<style>
+  .blog-post {
+    padding: 24px 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .blog-post a {
+    color: #111827;
+    text-decoration: none;
+  }
+
+  .blog-post a:hover {
+    text-decoration: underline;
+  }
+
+  h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    letter-spacing: -0.03em;
+  }
+
+  p {
+    margin: 0 0 12px;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+
+  .meta {
+    display: flex;
+    gap: 12px;
+    color: #6b7280;
+    font-size: 14px;
+  }
+</style>
