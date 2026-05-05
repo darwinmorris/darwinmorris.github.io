@@ -1,10 +1,9 @@
 ---
-title: "Post 1"
-description: "My first post."
+title: "init"
+description: "an initial touch of grace"
 pubDate: 2026-05-05
 author: "Darwin Morris"
-tags: ["astro", "blog"]
+tags: ["init"]
 ---
 
-
-test
+init

@@ -1,11 +1,8 @@
 ---
-title: "Post 2"
-description: "My first post."
-pubDate: 2026-05-05
+title: "Weak Memory Model Architectures"
+description: "A stumble through concurrency models"
+pubDate: 2026-05-06
 author: "Darwin Morris"
-tags: ["astro", "blog"]
+tags: ["astro"]
 ---
-
-# Post 2
-
-test
+a body
